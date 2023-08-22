@@ -1,0 +1,385 @@
+---
+title:  'Plotting using ggplot2 and plotly in R (Python = matplotlib, seaborn, plotnine, plotly)'
+author: "Robert Settlage"
+date: "2022-09-20"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{mathrsfs}
+---
+
+```{r echo=TRUE, include=FALSE}
+knitr::opts_knit$set(root.dir = "/Users/rsettlag/Projects/Classes/STAT_5014_Fall_2022_SITE/STAT5014_Fall2022_website/analysis")
+library(palmerpenguins)
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+```
+
+
+## Today's Agenda
+
+- Review and extend Git by adding branch, pull origin main
+- ggplot2  
+- plotly
+- Python variants matplotlib, seaborn, plotnine, plotly
+
+## Extending Git by using git branch
+
+Git is essentially a database of snapshots of the project directory tree.  
+
+The basic workflow is:  
+
+1. git **pull**  
+2. **do work**  
+3. git **pull** to make sure you have latest files
+4. git **add** *\<your changed file\>* tells git what change you care about  
+5. git **commit** -m "some INFORMATIVE message about the changes"  
+6. git **push** to the repository (local or remote)  
+7. repeat  
+
+### Now lets add a branch -- DONT change the main branch readme at home
+
+```
+git branch mynewstuff  
+# don't do this next line at home ;)
+## echo "\nadd a new line or two\n" >>README.md
+cat README.md
+git switch mynewstuff  
+cat README.md
+```
+
+What happened?  How do we fix it?
+
+### git pull
+
+```
+git pull
+git pull origin main
+cat README.md
+```
+
+Why is this cool?
+
+Hint:
+
+Remeber this nice visual from Git-flow <https://jeffkreeftmeijer.com/git-flow/>
+
+```{r git-flow, out.height="40%",echo=F,include=T}
+knitr::include_graphics("../figure/Git_flow.png")
+```
+
+
+## Plot inspiration
+
+Switching gears, visualizing our data.
+
+Two stages of data viz:
+
+1. EDA  
+2. Publication/Reporting  
+
+<http://www.r-graph-gallery.com>
+
+<https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/>  
+<https://simplystatistics.org/2016/02/11/why-i-dont-use-ggplot2/>  
+<http://varianceexplained.org/r/why-I-use-ggplot2/>  
+
+*Julia*  
+<http://docs.juliaplots.org/latest/>
+
+### Elements of a good figure | EDA stage
+
+1. simple to create  
+2. shows only what you need it to
+3. doesn't take a lot of explaination  
+4. YOU are the primary audience (at first)  
+5. has enough detail to give insight
+
+### Elements of a good figure | Publication stage
+
+1. ok, wow factor  
+2. shows only what you need it to  
+3. draws the reader in  
+4. invokes inquiry  
+5. is fully self contained with legend AND caption 
+6. simple is GENERALLY better (meaning less factors in play)  
+7. all these rules are out the window for art
+
+General good advice:  
+<http://jaoa.org/article.aspx?articleid=2094515>  
+Figure caption specifics:  
+<https://www.physics.ohio-state.edu/~wilkins/writing/Handouts/fig-captions.html>  
+How to lie with charts:  
+<https://flowingdata.com/2017/02/09/how-to-spot-visualization-lies/>
+
+### Elements of a good figure | specifics
+
+<https://flowingdata.com/2010/07/22/7-basic-rules-for-making-charts-and-graphs/>
+
+1. EDA stage, stay simple and investigate oddities
+    + outliers, typos, interesting features   
+2. make a legend if needed (ie you used colors, shapes, etc for a factor) 
+3. label axes
+4. include units  
+5. keep geometry in check  
+    + area of circle or square, size of bubble
+6. always include sources  
+7. keep your audience in mind  
+
+"To put it simply: tell your story clearly and communicate the data accurately."
+
+![Reading order](./figure/reading_order.png)
+
+## Multipanel plots
+
+I personally find these the most rewarding, but most time consuming plots.  I often end up doing them in base R because -I- find the layout easier for me to understand.   
+
+Consider a Base R 3 panel plot showing density of a scatter plot in the margins.
+
+![Base R multipanel](./figure/base_multipanel.png)
+
+### Multipanel base plot
+
+How do we get to the above?  -- We manipulate the canvas.
+
+This site has everything needed to make fantastic plots using base functions:
+
+<https://www.statmethods.net/advgraphs/layout.html>
+
+### Multipanel base plot example
+
+<https://r-charts.com/base-r/combining-plots/>
+
+```{r multipanel_example, echo=T, eval=T, include=T}
+# Data
+set.seed(6)
+x <- rexp(50)
+
+layout(matrix(c(2, 0, 1, 3), nrow = 2, ncol = 2, byrow = TRUE),
+       widths = c(3, 1),
+       heights  = c(1, 3), respect = TRUE)
+
+# Top and right margin of the main plot
+par(mar = c(5.1, 4.1, 0, 0))
+plot(x, cex=2, pch=20)
+
+# Left margin of the histogram
+par(mar = c(0, 4.1, 0, 0))
+hist(x, main = "", bty = "n", axes = FALSE, ylab = "")
+
+# Bottom margin of the boxplot
+par(mar = c(5.1, 0, 0, 0))
+
+# Boxplot without plot region box
+par(bty = "n")
+
+# Boxplot without axes
+boxplot(x, axes = FALSE)
+```
+
+### Margins are the key
+
+https://www.r-graph-gallery.com/74-margin-and-oma-cheatsheet.html
+
+```{r margins, echo=TRUE, include=TRUE, eval=TRUE}
+# Margins area
+par(oma=c(3,3,3,3)) # all sides have 3 lines of space
+par(mar=c(5,4,4,2) + 0.1)
+
+# Plot
+plot(0:10, 0:10, type="n", xlab="X", ylab="Y") # type="n" hides the points
+
+# Place text in the plot and color everything plot-related red
+text(5,5, "Plot", col="red", cex=2)
+box(col="red")
+
+# Place text in the margins and label the margins, all in forestgreen  
+mtext("Margins", side=3, line=2, cex=2, col="forestgreen")  
+mtext("par(mar=c(b,l,t,r))", side=3, line=1, cex=1, col="forestgreen")  
+mtext("Line 0", side=3, line=0, adj=1.0, cex=1, col="forestgreen")  
+mtext("Line 1", side=3, line=1, adj=1.0, cex=1, col="forestgreen")  
+mtext("Line 2", side=3, line=2, adj=1.0, cex=1, col="forestgreen")  
+mtext("Line 3", side=3, line=3, adj=1.0, cex=1, col="forestgreen")  
+box("figure", col="forestgreen")  
+ 
+# Label the outer margin area and color it blue  
+# Note the 'outer=TRUE' command moves us from the figure margins to the outer margins.  
+mtext("Outer Margin Area", side=1, line=1, cex=2, col="blue", outer=TRUE)  
+mtext("par(oma=c(b,l,t,r))", side=1, line=2, cex=1, col="blue", outer=TRUE)  
+mtext("Line 0", side=1, line=0, adj=0.0, cex=1, col="blue", outer=TRUE)  
+mtext("Line 1", side=1, line=1, adj=0.0, cex=1, col="blue", outer=TRUE)  
+mtext("Line 2", side=1, line=2, adj=0.0, cex=1, col="blue", outer=TRUE)  
+box("outer", col="blue") 
+```
+
+
+## ggplot2
+
+Another Hadley Wickam creation.  Lot's of love/hate for it.  I mostly like it.  I find a few types of plots are SUPER simple via ggplot2 that might be very time consuming in base graphics.  I also find that I spend more time in customizing away the ggplot look if I am trying to make a figure for a pub.
+
+<https://www.sharpsightlabs.com/blog/geom_line/?utm_source=ssl_email_primary&utm_medium=email&utm_campaign=newsletter>
+
+The basic idea is that creating figures is a step wise process of building a plot.  
+
+1. you need data  
+2. you need a mapping of data to the plot features  
+3. you need a graphical object  
+
+You mix these and wallah!!  Additionally, some basic sensible formatting defaults are set.  
+
+### Examples
+
+Let's look at:
+
++ factors  
++ fill  
++ color  
++ facet_wrap  
++ smooth  
+
+
+```{r ggplot_penguins_bm, echo=TRUE, eval=TRUE, include=TRUE}
+library(ggplot2)
+
+penguins %>% 
+  filter(!is.na(sex)) %>%
+  select(sex,body_mass_g, species) %>%
+  ggplot(aes(x=sex, y=body_mass_g)) +
+  geom_col(aes(fill=sex)) + 
+  facet_wrap(~ species)
+
+```
+
+```{r ggplot_penguins_bm2, echo=TRUE, eval=TRUE, include=TRUE}
+
+peng <- penguins %>% 
+  filter(!is.na(sex)) %>%
+  select(sex,body_mass_g, species, flipper_length_mm) %>%
+  ##group_by(species, sex) %>%
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g, color=species)) +
+  geom_point() + 
+  geom_smooth(method="lm", se=FALSE) +
+  facet_wrap(~ sex) +
+  theme(axis.text.x = element_text(angle=45,hjust=1))
+peng
+
+```
+
+```{r}
+ggplotly(peng + 
+           tidyquant::theme_tq() + 
+           theme(axis.text.x = element_text(angle=45,hjust=1)) +
+           labs(x = ""))
+```
+
+```{r}
+fig <- penguins %>%
+  select(-year) %>%
+  filter(!is.na(sex)) %>%
+  plot_ly(x = ~ bill_length_mm, y = ~ bill_depth_mm, 
+          type = 'scatter', mode = 'markers', split = ~species)
+  
+fig
+```
+
+
+## Python time
+
+IMO, there are really two ways to use python in Rstudio, both using the Reticulate package.  We can:  
+
+1. jump into a Python kernel and do what we want using native Python commands  
+2. stay in R and use Python **through** R
+
+Setup Reticulate, Python and Conda env:  
+
+```{r python1}
+# install.packages("reticulate")
+## from terminal -- could do this via reticulate functions as in:
+## https://rstudio.github.io/reticulate/articles/python_packages.html
+# conda create -n stat5014
+# conda activate stat5014
+# conda install matplotlib seaborn pandas numpy plotnine plotly
+# pip install palmerpenguins # <- could also use reticulate to pass penguin data from R->python
+library(reticulate)
+use_condaenv("r-reticulate")
+#importing required Python libraries/modules
+sns <- import('seaborn')
+plt <- import('matplotlib.pyplot')
+pd <- import('pandas')
+```
+
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+from palmerpenguins import load_penguins
+penguins = load_penguins()
+plt.figure(figsize=(17,10))
+plt.scatter(penguins['bill_length_mm'], penguins['bill_depth_mm'], c=penguins['body_mass_g'],alpha=0.7,cmap = 'gnuplot2')
+#plt.title('Weight vs Height with color gradient representing Brozek',fontsize=25)
+#plt.xlabel('Weight', fontsize=20)
+#plt.ylabel('Height', fontsize=20)
+plt.grid(True)
+cb= plt.colorbar()
+cb.set_label('bodymass', fontsize=20)
+#plt.show()
+plt.savefig('../figure/matplotlib_test.jpg')
+```
+![matplotlib](./figure/matplotlib_test.jpg)
+
+```{r seaborn_plt, include=TRUE, eval=TRUE}
+#building a seaborn pairplot using pairplot()
+s <- sns$pairplot(r_to_py(penguins), hue = 'species')
+#display the plot
+#plt$show()
+plt$savefig('../figure/seaborn_pairplot.jpg')
+```
+
+![pairplot](./figure/seaborn_pairplot.jpg)
+
+Plotnine giving me problems atm, fix later.
+
+```{r eval=FALSE}
+# https://stackoverflow.com/questions/65487862/creating-plot-using-plotnine-of-python-from-r-through-reticulate
+pd = import('pandas',convert=F)
+p9 = import('plotnine')
+# new imports
+patsy = import('patsy')
+  # import to be able to show in RStudio (see issue here: https://github.com/rstudio/rstudio/issues/4978)
+matplotlib = import('matplotlib')
+matplotlib$use('tkAgg')
+plt = import('matplotlib.pyplot')
+
+peng_py <- r_to_py(penguins,convert=FALSE)
+peng_pd <- pd$DataFrame(data=peng_py)
+
+plot_py = p9$ggplot(mpg_pd,p9$aes(x='displ',y='cty'),
+                    # new code (-1 was the only value that didn't throw an error)
+          environment = patsy$EvalEnvironment$capture(eval_env=as.integer(-1)))
+print(class(plot_py)) # "plotnine.ggplot.ggplot" "python.builtin.object"
+
+# Actually show the plot
+plot_py
+plt$show()
+```
+
+##### will adapt later
+
+```{r test_chunk, eval=FALSE}
+import seaborn as sns
+import pandas as pd
+from palmerpenguins import load_penguins
+penguins = load_penguins()
+penguins.head()
+g = sns.lmplot(x="flipper_length_mm",
+               y="body_mass_g",
+               hue="species",
+               height=7,
+               data=penguins,
+               palette=['#FF8C00','#159090','#A034F0'])
+g.set_xlabels('Flipper Length')
+g.set_ylabels('Body Mass')
+plot.show()
+```
+
+
