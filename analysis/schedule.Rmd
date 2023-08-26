@@ -23,32 +23,32 @@ Course Website: https://rsettlage.github.io/STAT5104_Fall2023/
 
 ### Tentative schedule
 
-Suggested schedule, you can speed ahead.
-*Denotes homework due by date (you can turn in early)
+Suggested schedule, you can speed ahead when HW is posted.
+*Denotes homework assigned, due in 2 weeks (you can turn in early)
 
 |Lecture | Date      | Topic
 |--------|:---------:|------------------------------------------------------------------ 
 |        |           | **MODULE 1 -- Reproducible Research, Good Programming Practices, Git and building a website**  
-|-       | 23-Aug    | No class  
+|-       | 23-Aug*   | No class  
 |1       | 30-Aug    | Introductions, R, Rstudio, Rmarkdown, LaTeX, Git and Reproducible Research  
-|2	     |  7-Sep    | Reproducible Research, Good Programming Practices, (some) Git, go through Sample Homework  
-|3	     | 14-Sep    | Building a website hosted on GitHub in Rstudio  
+|2	     |  6-Sep    | Reproducible Research, Good Programming Practices, (some) Git, go through Sample Homework  
+|3	     | 13-Sep*   | Building a website hosted on GitHub in Rstudio  
 |        |           | **MODULE 2 -- Basics, munging, wrangling, factors, graphics and scaling**
-|4	     | 21-Sep    | graphics - base-ggplot2-plotly-matplotlib-seaborn-plotnine-plotly 
-|5	     | 28-Sep    | Math and matrix ops in both languages base/matrix vs base/numpy/pandas  
-|6	     |  5-Oct    | Data munging -- dplyr/tidyverse vs plydata/suiba/tidypandas/tidypolars/datar  
-|7	     | 12-Oct    | Data import -- (my)sql, excel, json, plain text, yaml, web scraping
-|-       | 19-Oct    | No class  
-|8	     | 26-Oct    | factors (forcats) and recipes  
-|9	     |  2-Nov    | R's Apply vs mutate + map  
+|-	     | 20-Sep*   | No class - install VSCode and Jupyter for R/Python   
+|4	     | 27-Sep    | graphics - base-ggplot2-plotly-matplotlib-seaborn-plotnine-plotly  
+|5	     |  4-Oct    | Math and matrix ops in both languages base/matrix vs base/numpy/pandas 
+|6	     | 11-Oct    | Data munging -- dplyr/tidyverse vs plydata/suiba/tidypandas/tidypolars/datar. 
+|7       | 18-Oct    | Data import -- (my)sql, excel, json, plain text, yaml, web scraping  
+|8	     | 25-Oct    | factors (forcats) and recipes  
+|9	     |  1-Nov    | R's Apply vs mutate + map  
 |        |           | **MODULE 3 -- Fun with text, ML and automation**  
-|10	     | 9-Nov    | text munging -- tidytext (https://analyticsindiamag.com/top-10-r-packages-for-natural-language-processing-nlp/) vs textblob,torch text,PySpark and Sparklinlp   
-|- 	     | 16-Nov    | No class  
+|10	     |  8-Nov    | text munging -- tidytext (https://analyticsindiamag.com/top-10-r-packages-for-natural-language-processing-nlp/) vs textblob,torch text,PySpark and Sparklinlp   
+|11	     | 15-Nov    | ML in both languages -- Keras vs PyTorch (SciKitLearn?  mle4? others?)  
 |        |           | **MODULE 4 -- Automation, Shiny and SQL**  
-|-	     | 23-Nov    | No class -- Thanksgiving     
-|-	     | 30-Nov*   | No class -- on your own  
-|11	     |  7-Dec    | ML in both languages -- Keras vs PyTorch (SciKitLearn?  mle4? others?)     
-|12	     | 14-Dec*   | Automation, Shiny, and GUIs for working with collaborators    
+|-	     | 22-Nov    | No class -- Thanksgiving     
+|12      | 29-Nov    | Automation and Shiny 
+|- 	     |  6-Dec    | Class?        
+|- 	     | 13-Dec    | No class 
 |-       | ------    | Final -- none  
 
 
