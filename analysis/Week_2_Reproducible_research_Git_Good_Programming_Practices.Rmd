@@ -1,7 +1,7 @@
 ---
 title:  'Reproducible Research, (some) Git, Good Programming Practices, go through Sample Homework'
 author: "Robert Settlage"
-date: "2021-09-06"
+date: "2023-09-06"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console

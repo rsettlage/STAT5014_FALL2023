@@ -24,26 +24,25 @@ header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{ma
 * Git fundamentals
 * Markdown
 * Python basics
-* SAS basics
 
 ## Tentative Course Lecture Schedule  
 
 Due dates are solid, however, feel free to race ahead.  
-https://rsettlage.github.io/STAT5104_Fall2022/schedule.html
+https://rsettlage.github.io/STAT5104_Fall2023/schedule.html
 
 ## Passing the course  
 
 Q. How do you pass the course??  
 A. Do the homework AND participate.
 
-There will be ca. 5 homeworks, you need to pass 4.  There will also be a group project which must receive a passing mark.  Each homework will be given 10 points, 7 is passing.  Point breakdown will be:
+There will be ca. 6 homeworks, you need to pass 5.  Point breakdown will be:
 
-- 2 pts for submitting  
+- 2 pts for submitting via Git  
 - 2 pts for clean, well written document  
 - 2 pts for complete description of analysis process  
 - 4 pts for completing the assigned tasks.  
 
-## Requirements for class environment
+## Requirements for class environment DRA. 
 
 * During lecture:
     + Do not play on internet during lecture.
