@@ -1,7 +1,7 @@
 ---
 title:  'Reproducible Research, (some) Git, Good Programming Practices, go through Sample Homework'
 author: "Robert Settlage"
-date: "2021-09-12"
+date: "2023-09-13"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -41,7 +41,7 @@ In general, we should **weave** code and text into a complete reference of our w
 
 ## Check out Sample Homework  
 
-<https://rsettlage.github.io/STAT5014_Fall2022/SampleHomework.html>  
+<https://rsettlage.github.io/STAT5014_FALL2023/SampleHomework.html>  
 
 
 ## Back to Reproducible Research Analysis
