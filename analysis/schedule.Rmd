@@ -18,7 +18,7 @@ CRN:            89853
 Office:         --  
 Email:          rsettlag@vt.edu
 Office hours:   By appointment: Zoom.  
-Course Website: https://rsettlage.github.io/STAT5104_Fall2023/
+Course Website: https://rsettlage.github.io/STAT5104_FALL2023/
 --------------  ---------------------------------------
 
 ### Tentative schedule

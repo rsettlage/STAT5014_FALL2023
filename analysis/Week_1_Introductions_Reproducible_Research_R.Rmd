@@ -28,7 +28,7 @@ header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{ma
 ## Tentative Course Lecture Schedule  
 
 Due dates are solid, however, feel free to race ahead.  
-https://rsettlage.github.io/STAT5104_Fall2023/schedule.html
+https://rsettlage.github.io/STAT5104_FALL2023/schedule.html
 
 ## Passing the course  
 

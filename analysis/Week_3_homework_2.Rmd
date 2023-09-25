@@ -1,0 +1,25 @@
+---
+title: "Homework 2"
+subtitle: "Due: Oct 4"
+author: "Robert Settlage"
+date: "2023-09-24"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{mathrsfs}
+---
+
+Homework 1 was all about being prepared.  Homework 2 is all about you.  Choose one of the website builders shown in class and simply get one up and running on GitHub.
+
+As a reminder, some packages that assist this are:
+
++ blogdown  
++ distillr  
++ workflowr  
++ portfoliodown  
++ quarto  
+
+NOTE: so far, all of the issues I have seen with Quarto are the student forgot to repeat step 8, re-render site and then get up to GitHub.
+
+Also, I showed how to do it for a blog, you should choose what you want.  This is for you and it is up to you if you use it later to showcase you.
+
