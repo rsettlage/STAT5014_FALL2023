@@ -9,7 +9,7 @@ editor_options:
 header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{mathrsfs}
 ---
 
-Homework 1 was all about being prepared.  Homework 2 is all about you.  Choose one of the website builders shown in class and simply get one up and running on GitHub.
+Homework 1 was all about being prepared.  Homework 2 is all about you.  Choose one of the website builders shown in class and simply get one up and running on GitHub.  Simply send me an email with the link.
 
 As a reminder, some packages that assist this are:
 
