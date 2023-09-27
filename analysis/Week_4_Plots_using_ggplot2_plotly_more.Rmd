@@ -1,7 +1,7 @@
 ---
 title:  'Plotting using ggplot2 and plotly in R (Python = matplotlib, seaborn, plotnine, plotly)'
 author: "Robert Settlage"
-date: "2022-09-20"
+date: "2023-09-26"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -9,7 +9,7 @@ header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{ma
 ---
 
 ```{r echo=TRUE, include=FALSE}
-knitr::opts_knit$set(root.dir = "/Users/rsettlag/Projects/Classes/STAT_5014_Fall_2022_SITE/STAT5014_Fall2022_website/analysis")
+#knitr::opts_knit$set(root.dir = #"/Users/rsettlag/Projects/Classes/STAT_5014_Fall_2022_SITE/STAT5014_Fall2022_website/analysis")
 library(palmerpenguins)
 library(tidyverse)
 library(ggplot2)
@@ -66,7 +66,7 @@ Hint:
 Remeber this nice visual from Git-flow <https://jeffkreeftmeijer.com/git-flow/>
 
 ```{r git-flow, out.height="40%",echo=F,include=T}
-knitr::include_graphics("../figure/Git_flow.png")
+knitr::include_graphics("./figure/Git_flow.png")
 ```
 
 
@@ -293,7 +293,7 @@ IMO, there are really two ways to use python in Rstudio, both using the Reticula
 
 Setup Reticulate, Python and Conda env:  
 
-```{r python1}
+```{r python1, eval=FALSE}
 # install.packages("reticulate")
 ## from terminal -- could do this via reticulate functions as in:
 ## https://rstudio.github.io/reticulate/articles/python_packages.html
@@ -309,7 +309,7 @@ plt <- import('matplotlib.pyplot')
 pd <- import('pandas')
 ```
 
-```{python}
+```{python eval=FALSE}
 import matplotlib.pyplot as plt
 import pandas as pd
 from palmerpenguins import load_penguins
@@ -327,7 +327,7 @@ plt.savefig('../figure/matplotlib_test.jpg')
 ```
 ![matplotlib](./figure/matplotlib_test.jpg)
 
-```{r seaborn_plt, include=TRUE, eval=TRUE}
+```{r seaborn_plt, include=TRUE, eval=FALSE}
 #building a seaborn pairplot using pairplot()
 s <- sns$pairplot(r_to_py(penguins), hue = 'species')
 #display the plot
