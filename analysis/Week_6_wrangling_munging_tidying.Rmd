@@ -1,7 +1,7 @@
 ---
 title:  'Lecture 6 - Data wrangling, munging and creating tidy datasets'
 author: "Robert Settlage"
-date: "2022-10-04"
+date: "2023-10-11"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -95,7 +95,7 @@ We will cover different input formats next week, just some advice this week:
 
 ```{r getdata, echo=T, eval=T, tidy=F, tidy.opts=list(width.cutoff=60)}
     #google "how to get data into R"
-    url<-"http://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/Sensory.dat"
+    url<-"https://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/Sensory.dat"
     sensory_raw<-read.table(url, header=F, skip=1, fill=T, stringsAsFactors = F)
     # read.table is ok, I prefer fread (in data.table package)
     saveRDS(sensory_raw,file="sensory_raw.RDS")
@@ -277,7 +277,7 @@ Ok, what about python?
 Reshaping post:  
 <https://nikgrozev.com/2015/07/01/reshaping-in-pandas-pivot-pivot-table-stack-and-unstack-explained-with-pictures/>
 
-```{r python_setup}
+```{r python_setup, eval=FALSE}
 
 library(reticulate)
 conda_list()
@@ -286,7 +286,7 @@ use_condaenv("r-reticulate")
 ```
 
 
-```{python}
+```{python, eval=FALSE}
 import numpy as np
 import pandas as pd
 import seaborn as sns

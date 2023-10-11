@@ -38,10 +38,12 @@ navbar:
     menu:
       - text: "Homework 1"
         href: Week_1_homework_1.html
+      - text: "Homework 2"
+        href: Week_3_homework_2.html
+      - text: "Homework 3"
+        href: Week_6_homework_3.html
       - text: "Project 1"
         href: https://rsettlage.github.io/deeplearning/2022-11-04-fun-with-h2o/
-      - text: "Project 2"
-        href: Project_2.html
       - text: "Project Skeleton"
         href: Project-skeleton.Rmd
   - text: Setup

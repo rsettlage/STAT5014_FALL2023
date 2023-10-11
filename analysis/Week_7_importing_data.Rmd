@@ -1,7 +1,7 @@
 ---
 title:  'Lecture 7 - importing data'
 author: "Robert Settlage"
-date: "2022-10-11"
+date: "2023-10-11"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -28,7 +28,7 @@ Often, our data comes in with data in the body of the data table and variables e
 
 ```{r getdata, echo=T, eval=T, tidy=F, tidy.opts=list(width.cutoff=60)}
     #google "how to get data into R"
-    url<-"http://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/Sensory.dat"
+    url<-"https://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/Sensory.dat"
     sensory_raw<-read.table(url, header=F, skip=0, fill=T, stringsAsFactors = F)
     # read.table is ok, I prefer fread (in data.table package)
     saveRDS(sensory_raw,file="sensory_raw.RDS")
@@ -77,7 +77,7 @@ Data wrangling or munging is the process of going from raw to useful data.  This
 | select      | - filter       |  
 | rename      | - rename       |  
 | filter      | - query        |  
-| arrage      | - sort_values  |  
+| arrange     | - sort_values  |  
 | group_by    | - groupby      |  
 | summarize   | - agg          |  
 +-------------+----------------+  
@@ -167,7 +167,7 @@ readxl::read_excel
 Python:
 pandas.read_excel or if more functionality is needed, try Xlwings
 
-The work effectively the same.  More functionality in the R version.
+They work effectively the same.  More functionality in the R version.
 
 ```{r read_xl_example, eval=FALSE, echo=TRUE}
 library(readxl)
