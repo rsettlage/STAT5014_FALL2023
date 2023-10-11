@@ -11,7 +11,7 @@
 
 <meta name="author" content="you" />
 
-<meta name="date" content="2022-11-01" />
+<meta name="date" content="2023-10-11" />
 
 <title>Project 1</title>
 
@@ -445,7 +445,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Project 1</h1>
 <h4 class="author">you</h4>
-<h4 class="date">2022-11-01</h4>
+<h4 class="date">2023-10-11</h4>
 
 </div>
 
@@ -453,7 +453,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -464,8 +464,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -478,9 +478,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>STAT5014_FALL2023/</code> <span
@@ -503,18 +503,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -605,15 +608,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree20785ea27659e2748ffe9d9c5bffb19ac3690973targetblank20785eaa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree42a61efef537b5904289a38aec2c6f115230ce79targetblank42a61efa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/20785ea27659e2748ffe9d9c5bffb19ac3690973" target="_blank">20785ea</a>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/42a61efef537b5904289a38aec2c6f115230ce79" target="_blank">42a61ef</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree20785ea27659e2748ffe9d9c5bffb19ac3690973targetblank20785eaa"
+id="strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree42a61efef537b5904289a38aec2c6f115230ce79targetblank42a61efa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -623,7 +626,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/20785ea27659e2748ffe9d9c5bffb19ac3690973" target="_blank">20785ea</a>.
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/42a61efef537b5904289a38aec2c6f115230ce79" target="_blank">42a61ef</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -645,15 +648,11 @@ Untracked files:
     Untracked:  Week4_part1.mp4
     Untracked:  Week4_part2.mp4
     Untracked:  Week4_part3.mp4
-    Untracked:  analysis/Week_6_homework_3.Rmd
+    Untracked:  analysis/Week_8_forcats_recipes_cache/
     Untracked:  week4_part4.mp4
 
 Unstaged changes:
-    Modified:   analysis/Week_4_Plots_using_ggplot2_plotly_more.Rmd
-    Modified:   analysis/Week_5_matrix_vector_math.Rmd
-    Modified:   analysis/Week_6_wrangling_munging_tidying.Rmd
-    Modified:   analysis/Week_7_importing_data.Rmd
-    Modified:   analysis/_site.yml
+    Modified:   analysis/Project-skeleton.Rmd
     Modified:   girder_raw.RDS
     Modified:   sensory_raw.RDS
 
@@ -703,6 +702,23 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rsettlage/STAT5014_FALL2023/42a61efef537b5904289a38aec2c6f115230ce79/docs/Project-skeleton.html" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+<td>
+Week 6 update/cleanup
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
@@ -725,6 +741,21 @@ push all
 </div>
 </div>
 </div>
+<div id="project-objective" class="section level2">
+<h2>Project objective</h2>
+<p>You will develop an automated pipeline to:</p>
+<ol style="list-style-type: lower-alpha">
+<li>pull financial market data, historical from your own MongoDB and
+current (yesterday) from a primary source like Yahoo Finance.</li>
+<li>munge and otherwise tidy the data.</li>
+<li>model market direction.</li>
+<li>create an pdf report.</li>
+<li>create an interactive shiny dashboard.</li>
+<li>insert data into a MongoDB.</li>
+</ol>
+</div>
+<div id="sections-below-tbd" class="section level1">
+<h1>Sections below TBD</h1>
 <div id="define-objectives-of-writeup" class="section level2">
 <h2>Define objectives of writeup</h2>
 </div>
@@ -808,6 +839,7 @@ loaded via a namespace (and not attached):
 [29] pkgconfig_2.0.3   rstudioapi_0.15.0 later_1.3.1       digest_0.6.33    
 [33] R6_2.5.1          utf8_1.2.3        pillar_1.9.0      magrittr_2.0.3   
 [37] bslib_0.5.1       tools_4.3.1       cachem_1.0.8     </code></pre>
+</div>
 </div>
 </div>
 
