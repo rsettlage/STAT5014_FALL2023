@@ -1,7 +1,7 @@
 ---
 title:  'Lecture 8 - factors and recipes'
 author: "Robert Settlage"
-date: "2022-10-26"
+date: "2023-10-25"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -225,7 +225,7 @@ What you need for a model is a "one-hot" encoded variable. It creates a new colu
 
 
 ```{r one_hot, eval=TRUE, echo=TRUE, include=TRUE}
-# in this, what is does the intercept represent?
+# in this, what does the intercept represent?
 model.matrix(bill_length_mm~sex+bill_volume, penguins_new)
 # if we just wanted the sex and species encodings
 model.matrix(~sex+species+0, penguins_new)

@@ -11,7 +11,7 @@
 
 <meta name="author" content="Robert Settlage" />
 
-<meta name="date" content="2022-10-26" />
+<meta name="date" content="2023-10-25" />
 
 <title>Lecture 8 - factors and recipes</title>
 
@@ -445,7 +445,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Lecture 8 - factors and recipes</h1>
 <h4 class="author">Robert Settlage</h4>
-<h4 class="date">2022-10-26</h4>
+<h4 class="date">2023-10-25</h4>
 
 </div>
 
@@ -453,7 +453,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -464,8 +464,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -474,13 +474,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-10-11
+<strong>Last updated:</strong> 2023-10-25
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 5
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 2
 </p>
 <p>
 <strong>Knit directory:</strong> <code>STAT5014_FALL2023/</code> <span
@@ -503,18 +503,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -574,16 +577,24 @@ versions is critical for reproducibility.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongdetected">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>Cache:</strong> detected </a>
 </p>
 </div>
-<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div id="strongCachestrongdetected" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be
-confident that you successfully produced the results during this
-run.</p>
+The following chunks had caches available:
+<ul>
+<li>
+model_and_predict_h2o
+</li>
+</ul>
+<p>To ensure reproducibility of the results, delete the cache directory
+<code>Week_8_forcats_recipes_cache</code> and re-run the analysis. To
+have workflowr automatically delete the cache directory prior to
+building the file, set <code>delete_cache = TRUE</code> when running
+<code>wflow_build()</code> or <code>wflow_publish()</code>.</p>
 </div>
 </div>
 </div>
@@ -605,15 +616,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree20785ea27659e2748ffe9d9c5bffb19ac3690973targetblank20785eaa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree6521e8fe11e270fcdc428d051d6f038116938302targetblank6521e8fa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/20785ea27659e2748ffe9d9c5bffb19ac3690973" target="_blank">20785ea</a>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/6521e8fe11e270fcdc428d051d6f038116938302" target="_blank">6521e8f</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree20785ea27659e2748ffe9d9c5bffb19ac3690973targetblank20785eaa"
+id="strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree6521e8fe11e270fcdc428d051d6f038116938302targetblank6521e8fa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -623,7 +634,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/20785ea27659e2748ffe9d9c5bffb19ac3690973" target="_blank">20785ea</a>.
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/6521e8fe11e270fcdc428d051d6f038116938302" target="_blank">6521e8f</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -638,22 +649,23 @@ were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
     Ignored:    analysis/.Rhistory
 
 Untracked files:
+    Untracked:  00_project.mp4
+    Untracked:  01_create_project_directory_structure.mp4
+    Untracked:  02_git_project_setup.mp4
     Untracked:  Week4_part1.mp4
     Untracked:  Week4_part2.mp4
     Untracked:  Week4_part3.mp4
-    Untracked:  analysis/Week_6_homework_3.Rmd
+    Untracked:  analysis/Week_8_forcats_recipes_cache/
     Untracked:  week4_part4.mp4
 
 Unstaged changes:
-    Modified:   analysis/Week_4_Plots_using_ggplot2_plotly_more.Rmd
-    Modified:   analysis/Week_5_matrix_vector_math.Rmd
-    Modified:   analysis/Week_6_wrangling_munging_tidying.Rmd
     Modified:   analysis/Week_7_importing_data.Rmd
-    Modified:   analysis/_site.yml
+    Modified:   analysis/Week_8_forcats_recipes.Rmd
     Modified:   girder_raw.RDS
     Modified:   sensory_raw.RDS
 
@@ -702,6 +714,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rsettlage/STAT5014_FALL2023/42a61efef537b5904289a38aec2c6f115230ce79/docs/Week_8_forcats_recipes.html" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+<td>
+Week 6 update/cleanup
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -868,6 +897,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/42a61efef537b5904289a38aec2c6f115230ce79/docs/figure/Week_8_forcats_recipes.Rmd/palmer_category-1.png" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/0c7e5d934a67297b6f0b8626898d8449d9f9d0cf/docs/figure/Week_8_forcats_recipes.Rmd/palmer_category-1.png" target="_blank">0c7e5d9</a>
@@ -1051,6 +1091,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/42a61efef537b5904289a38aec2c6f115230ce79/docs/figure/Week_8_forcats_recipes.Rmd/palmer_category-5.png" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/0c7e5d934a67297b6f0b8626898d8449d9f9d0cf/docs/figure/Week_8_forcats_recipes.Rmd/palmer_category-5.png" target="_blank">0c7e5d9</a>
@@ -1351,6 +1402,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/42a61efef537b5904289a38aec2c6f115230ce79/docs/figure/Week_8_forcats_recipes.Rmd/palmer_category-6.png" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/0c7e5d934a67297b6f0b8626898d8449d9f9d0cf/docs/figure/Week_8_forcats_recipes.Rmd/palmer_category-6.png" target="_blank">0c7e5d9</a>
 </td>
 <td>
@@ -1482,6 +1544,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/42a61efef537b5904289a38aec2c6f115230ce79/docs/figure/Week_8_forcats_recipes.Rmd/factor_example-1.png" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/0c7e5d934a67297b6f0b8626898d8449d9f9d0cf/docs/figure/Week_8_forcats_recipes.Rmd/factor_example-1.png" target="_blank">0c7e5d9</a>
 </td>
 <td>
@@ -1531,6 +1604,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/42a61efef537b5904289a38aec2c6f115230ce79/docs/figure/Week_8_forcats_recipes.Rmd/factor_example-2.png" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/0c7e5d934a67297b6f0b8626898d8449d9f9d0cf/docs/figure/Week_8_forcats_recipes.Rmd/factor_example-2.png" target="_blank">0c7e5d9</a>
@@ -1588,6 +1672,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/42a61efef537b5904289a38aec2c6f115230ce79/docs/figure/Week_8_forcats_recipes.Rmd/factor_example-3.png" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/rsettlage/STAT5014_FALL2023/blob/0c7e5d934a67297b6f0b8626898d8449d9f9d0cf/docs/figure/Week_8_forcats_recipes.Rmd/factor_example-3.png" target="_blank">0c7e5d9</a>
 </td>
 <td>
@@ -1610,7 +1705,7 @@ these columns are binary with values 1 or 0 depending on whether the
 value of the variable is equal to the unique value being encoded by this
 column. The R function lm (through <code>model.matrix</code>) does this
 for us.</p>
-<pre class="r"><code># in this, what is does the intercept represent?
+<pre class="r"><code># in this, what does the intercept represent?
 model.matrix(bill_length_mm~sex+bill_volume, penguins_new)</code></pre>
 <pre><code>    (Intercept) sexmale bill_volume
 1             1       0   11959.020
@@ -2784,42 +2879,40 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] h2o_3.42.0.2         rsample_1.2.0        recipes_1.0.8       
- [4] skimr_2.1.5          palmerpenguins_0.1.1 reticulate_1.32.0   
- [7] lubridate_1.9.2      forcats_1.0.0        stringr_1.5.0       
-[10] dplyr_1.1.3          purrr_1.0.2          readr_2.1.4         
-[13] tidyr_1.3.0          tibble_3.2.1         ggplot2_3.4.3       
-[16] tidyverse_2.0.0      data.table_1.14.8    knitr_1.43          
+ [1] rsample_1.2.0        recipes_1.0.8        skimr_2.1.5         
+ [4] palmerpenguins_0.1.1 reticulate_1.32.0    lubridate_1.9.2     
+ [7] forcats_1.0.0        stringr_1.5.0        dplyr_1.1.3         
+[10] purrr_1.0.2          readr_2.1.4          tidyr_1.3.0         
+[13] tibble_3.2.1         ggplot2_3.4.3        tidyverse_2.0.0     
+[16] data.table_1.14.8    knitr_1.43          
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.2.0    timeDate_4022.108   farver_2.1.1       
- [4] bitops_1.0-7        RCurl_1.98-1.12     fastmap_1.1.1      
- [7] promises_1.2.1      digest_0.6.33       rpart_4.1.19       
-[10] timechange_0.2.0    lifecycle_1.0.3     ellipsis_0.3.2     
-[13] survival_3.5-5      magrittr_2.0.3      compiler_4.3.1     
-[16] rlang_1.1.1         sass_0.4.7          tools_4.3.1        
-[19] utf8_1.2.3          yaml_2.3.7          labeling_0.4.3     
-[22] bit_4.0.5           curl_5.0.2          repr_1.1.6         
-[25] workflowr_1.7.0     withr_2.5.0         nnet_7.3-19        
-[28] grid_4.3.1          fansi_1.0.4         git2r_0.32.0       
-[31] colorspace_2.1-0    future_1.33.0       globals_0.16.2     
-[34] scales_1.2.1        MASS_7.3-60         cli_3.6.1          
-[37] crayon_1.5.2        rmarkdown_2.24      generics_0.1.3     
-[40] rstudioapi_0.15.0   future.apply_1.11.0 tzdb_0.4.0         
-[43] cachem_1.0.8        splines_4.3.1       parallel_4.3.1     
-[46] base64enc_0.1-3     vctrs_0.6.3         hardhat_1.3.0      
-[49] Matrix_1.5-4.1      jsonlite_1.8.7      hms_1.1.3          
-[52] bit64_4.0.5         listenv_0.9.0       gower_1.0.1        
-[55] jquerylib_0.1.4     glue_1.6.2          parallelly_1.36.0  
-[58] codetools_0.2-19    stringi_1.7.12      gtable_0.3.4       
-[61] later_1.3.1         munsell_0.5.0       pillar_1.9.0       
-[64] furrr_0.3.1         htmltools_0.5.6     ipred_0.9-14       
-[67] lava_1.7.2.1        R6_2.5.1            rprojroot_2.0.3    
-[70] evaluate_0.21       lattice_0.21-8      highr_0.10         
-[73] png_0.1-8           httpuv_1.6.11       bslib_0.5.1        
-[76] class_7.3-22        Rcpp_1.0.11         prodlim_2023.08.28 
-[79] whisker_0.4.1       xfun_0.40           fs_1.6.3           
-[82] pkgconfig_2.0.3    </code></pre>
+ [4] fastmap_1.1.1       promises_1.2.1      digest_0.6.33      
+ [7] rpart_4.1.19        timechange_0.2.0    lifecycle_1.0.3    
+[10] ellipsis_0.3.2      survival_3.5-5      magrittr_2.0.3     
+[13] compiler_4.3.1      rlang_1.1.1         sass_0.4.7         
+[16] tools_4.3.1         utf8_1.2.3          yaml_2.3.7         
+[19] labeling_0.4.3      repr_1.1.6          workflowr_1.7.0    
+[22] withr_2.5.0         nnet_7.3-19         grid_4.3.1         
+[25] fansi_1.0.4         git2r_0.32.0        colorspace_2.1-0   
+[28] future_1.33.0       globals_0.16.2      scales_1.2.1       
+[31] MASS_7.3-60         cli_3.6.1           rmarkdown_2.24     
+[34] generics_0.1.3      rstudioapi_0.15.0   future.apply_1.11.0
+[37] tzdb_0.4.0          cachem_1.0.8        splines_4.3.1      
+[40] parallel_4.3.1      base64enc_0.1-3     vctrs_0.6.3        
+[43] hardhat_1.3.0       Matrix_1.5-4.1      jsonlite_1.8.7     
+[46] hms_1.1.3           listenv_0.9.0       gower_1.0.1        
+[49] jquerylib_0.1.4     glue_1.6.2          parallelly_1.36.0  
+[52] codetools_0.2-19    stringi_1.7.12      gtable_0.3.4       
+[55] later_1.3.1         munsell_0.5.0       pillar_1.9.0       
+[58] furrr_0.3.1         htmltools_0.5.6     ipred_0.9-14       
+[61] lava_1.7.2.1        R6_2.5.1            rprojroot_2.0.3    
+[64] evaluate_0.21       lattice_0.21-8      highr_0.10         
+[67] png_0.1-8           httpuv_1.6.11       bslib_0.5.1        
+[70] class_7.3-22        Rcpp_1.0.11         prodlim_2023.08.28 
+[73] whisker_0.4.1       xfun_0.40           fs_1.6.3           
+[76] pkgconfig_2.0.3    </code></pre>
 </div>
 </div>
 </div>
