@@ -1,7 +1,7 @@
 ---
 title:  'Another firehose introduction to ... AI/ML'
 author: "Robert Settlage"
-date: "2022-12-06"
+date: "2023-11-08"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
@@ -10,15 +10,16 @@ header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{ma
 
 ## Today's Agenda
 
-- Three objectives today
-    + Automation and Dashboards poll
+- Today. 
     + AI/ML introduction via Keras
     
 - Sorry in advance for all the unreferenced pictures, will work on adding references later.  MOST were taken from Nvidia DLI materials.  <https://www.nvidia.com/en-us/training/>
 
 ## Automation or text processing
 
-Poll -- given 1 more week, would you prefer to discuss automation or text processing?
+GitHub automations are working.  Down to fixing Rcode and making it create the report.
+
+Text processing will finish up the course next week.
 
 ## Machine learning problems
 

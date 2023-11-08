@@ -11,7 +11,7 @@
 
 <meta name="author" content="Robert Settlage" />
 
-<meta name="date" content="2022-12-06" />
+<meta name="date" content="2023-11-08" />
 
 <title>Another firehose introduction to … AI/ML</title>
 
@@ -446,7 +446,7 @@ div.tocify {
 <h1 class="title toc-ignore">Another firehose introduction to …
 AI/ML</h1>
 <h4 class="author">Robert Settlage</h4>
-<h4 class="date">2022-12-06</h4>
+<h4 class="date">2023-11-08</h4>
 
 </div>
 
@@ -454,7 +454,7 @@ AI/ML</h1>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -465,8 +465,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -475,13 +475,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-10-11
+<strong>Last updated:</strong> 2023-11-08
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>STAT5014_FALL2023/</code> <span
@@ -504,18 +504,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -606,15 +609,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree20785ea27659e2748ffe9d9c5bffb19ac3690973targetblank20785eaa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree2b9a4b43bbefe63feb4e588b06e8b6b73433f3c6targetblank2b9a4b4a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/20785ea27659e2748ffe9d9c5bffb19ac3690973" target="_blank">20785ea</a>
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/2b9a4b43bbefe63feb4e588b06e8b6b73433f3c6" target="_blank">2b9a4b4</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree20785ea27659e2748ffe9d9c5bffb19ac3690973targetblank20785eaa"
+id="strongRepositoryversionstrongahrefhttpsgithubcomrsettlageSTAT5014FALL2023tree2b9a4b43bbefe63feb4e588b06e8b6b73433f3c6targetblank2b9a4b4a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -624,7 +627,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/20785ea27659e2748ffe9d9c5bffb19ac3690973" target="_blank">20785ea</a>.
+<a href="https://github.com/rsettlage/STAT5014_FALL2023/tree/2b9a4b43bbefe63feb4e588b06e8b6b73433f3c6" target="_blank">2b9a4b4</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -639,22 +642,39 @@ were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
     Ignored:    analysis/.Rhistory
 
 Untracked files:
+    Untracked:  00_project.mp4
+    Untracked:  01_create_project_directory_structure.mp4
+    Untracked:  02_git_project_setup.mp4
+    Untracked:  03_control_setup.mp4
+    Untracked:  04_tq_part1.mp4
+    Untracked:  04_tq_part2.mp4
+    Untracked:  04_tq_save_part3.mp4
+    Untracked:  05_git_actions_part1.mp4
+    Untracked:  05_git_actions_part2.mp4
+    Untracked:  05_git_actions_part3.mp4
+    Untracked:  05_git_actions_part4.mp4
+    Untracked:  05_git_actions_part5.mp4
+    Untracked:  06_docker_part1.mp4
+    Untracked:  06_docker_part2.mp4
+    Untracked:  06_docker_part3.mp4
+    Untracked:  06_docker_part4.mp4
+    Untracked:  07_git_actions_part1.mp4
+    Untracked:  07_git_actions_part2-fixed-container.mp4
+    Untracked:  07_git_actions_part3a.mp4
+    Untracked:  07_git_actions_part3b.mp4
     Untracked:  Week4_part1.mp4
     Untracked:  Week4_part2.mp4
     Untracked:  Week4_part3.mp4
-    Untracked:  analysis/Week_6_homework_3.Rmd
     Untracked:  week4_part4.mp4
 
 Unstaged changes:
-    Modified:   analysis/Week_4_Plots_using_ggplot2_plotly_more.Rmd
-    Modified:   analysis/Week_5_matrix_vector_math.Rmd
-    Modified:   analysis/Week_6_wrangling_munging_tidying.Rmd
+    Modified:   analysis/Week_11_AIML.Rmd
     Modified:   analysis/Week_7_importing_data.Rmd
-    Modified:   analysis/_site.yml
     Modified:   girder_raw.RDS
     Modified:   sensory_raw.RDS
 
@@ -704,6 +724,23 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/rsettlage/STAT5014_FALL2023/42a61efef537b5904289a38aec2c6f115230ce79/docs/Week_11_AIML.html" target="_blank">42a61ef</a>
+</td>
+<td>
+rsettlage
+</td>
+<td>
+2023-10-11
+</td>
+<td>
+Week 6 update/cleanup
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
@@ -729,9 +766,8 @@ push all
 <div id="todays-agenda" class="section level2">
 <h2>Today’s Agenda</h2>
 <ul>
-<li>Three objectives today
+<li>Today.
 <ul>
-<li>Automation and Dashboards poll</li>
 <li>AI/ML introduction via Keras</li>
 </ul></li>
 <li>Sorry in advance for all the unreferenced pictures, will work on
@@ -742,8 +778,9 @@ class="uri">https://www.nvidia.com/en-us/training/</a></li>
 </div>
 <div id="automation-or-text-processing" class="section level2">
 <h2>Automation or text processing</h2>
-<p>Poll – given 1 more week, would you prefer to discuss automation or
-text processing?</p>
+<p>GitHub automations are working. Down to fixing Rcode and making it
+create the report.</p>
+<p>Text processing will finish up the course next week.</p>
 </div>
 <div id="machine-learning-problems" class="section level2">
 <h2>Machine learning problems</h2>

@@ -141,7 +141,7 @@ read_csv("https://github.com/tidyverse/readr/raw/main/inst/extdata/mtcars.csv")
 # use inline bash commands
 # could do this operation with the select argument, but the idea translates into better stuff  
 readr_example("mtcars.csv")
-fread("awk -F',' '{print $1, $4}' /Users/rsettlag/R/readr/extdata/mtcars.csv")
+fread("awk -F',' '{print $1, $4}' /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library/readr/extdata/mtcars.csv")
 
 
 # problems example:
